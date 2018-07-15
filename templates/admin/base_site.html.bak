@@ -1,0 +1,12 @@
+{% extends "admin/base.html" %}
+
+{% comment %}
+{% block title %}{{ title }} | {{ site_title|default:_('Sidewalkeggs site admin') }}{% endblock %}
+{% endcomment %}
+{% block title %}Sidewalkeggs site admin{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Sidewalkeggs Administration</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
