@@ -13,10 +13,8 @@ pip install cryptography==1.5
 
 
 
-
-
-
-
+./manage.py makemigrations <app_name>
+python manage.py migrate
 
 
 pip install django-filer
@@ -27,6 +25,7 @@ pip install Pillow
 
 
 apt-get install npm
+ln -s /usr/bin/nodejs /usr/bin/node
 npm install -g bower
 npm install
 bower install

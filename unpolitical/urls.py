@@ -1,12 +1,17 @@
-from django.urls import path
+from django.urls import include, path, re_path
 
 from . import views
 
+from rest_framework_nested import routers
+
+from authentication.views import AccountViewSet
+
+router = routers.SimpleRouter()
+router.register(r'accounts', AccountViewSet)
+
 app_name = 'unpolitical'
 urlpatterns = [
+    path('api/v1/', include(router.urls)),
     path('', views.IndexView.as_view(), name='index'),
-    path('<int:pk>/', views.DetailView.as_view(), name='detail'),
-    path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),
-    path('<int:question_id>/vote/', views.vote, name='vote'),
 ]
 

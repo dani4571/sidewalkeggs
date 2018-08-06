@@ -1,14 +1,22 @@
-{% load static %}
+<!DOCTYPE html>
+<html ng-app="sidewalkeggs">
+<head>
+  <title>unpolitical testing</title>
 
-<link rel="stylesheet" type="text/css" href="{% static 'unpolitical/style.css' %}" />
+  <base href="/" />
 
-{% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <li><a href="{% url 'unpolitical:detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+  {% include 'unpolitical/stylesheets.html' %}
+</head>
 
+<body>
+  {% include 'unpolitical/navbar.html' %}
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 ng-view"></div>
+    </div>
+  </div>
+
+  {% include 'unpolitical/javascripts.html' %}
+</body>
+</html>

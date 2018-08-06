@@ -27,5 +27,6 @@ admin.site.index_title = ugettext_lazy('Sidewalkeggs administration')
 
 urlpatterns = [
     path('unpolitical/', include('unpolitical.urls')),
+    path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
 ]

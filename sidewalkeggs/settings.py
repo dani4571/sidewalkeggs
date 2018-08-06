@@ -23,7 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'hz*y$vg!l0h)j&e3)h4vycg=%rs0w#47o$b#aqe#&wsw1)sz7m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', True)
+TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = ['23.253.234.200', '2001:4800:7817:103:be76:4eff:fe04:35d3']
 
@@ -32,12 +33,16 @@ ALLOWED_HOSTS = ['23.253.234.200', '2001:4800:7817:103:be76:4eff:fe04:35d3']
 
 INSTALLED_APPS = [
     'unpolitical.apps.UnpoliticalConfig',
+    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'compressor',
+    'authentication'
 ]
 
 MIDDLEWARE = [
@@ -46,6 +51,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+#    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -77,9 +83,9 @@ WSGI_APPLICATION = 'sidewalkeggs.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'sidewalkeggs',
+        'NAME': 'sidewalkeggs2',
         'USER': 'root',
-        'PASSWORD': 'pepeclabo',
+        'PASSWORD': 'XXXX',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
@@ -124,3 +130,25 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/opt/sidewalkeggs/static'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'staticdir'),
+)
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
+
+COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+    )
+}
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+AUTH_USER_MODEL = 'authentication.Account'
