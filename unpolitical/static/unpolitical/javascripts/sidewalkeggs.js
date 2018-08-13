@@ -5,7 +5,8 @@
     .module('sidewalkeggs', [
       'sidewalkeggs.config',
       'sidewalkeggs.routes',
-      'sidewalkeggs.authentication'
+      'sidewalkeggs.authentication',
+      'sidewalkeggs.layout'
     ]);
 
   angular
