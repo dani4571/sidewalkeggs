@@ -1,8 +1,8 @@
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
 
 # Create your models here.
-class AccountManager(BaseUserManager):
+class AccountManager(UserManager):
   def create_user(self, email, password=None, **kwargs):
     if not email:
       raise ValueError('Users must have a valid email address.')
@@ -23,12 +23,14 @@ class AccountManager(BaseUserManager):
     account = self.create_user(email, password, **kwargs)
 
     account.is_admin = True
+    account.is_staff = True
+    account.is_superuser = True
     account.save()
 
     return account
 
 
-class Account(AbstractBaseUser):
+class Account(AbstractUser):
   email = models.EmailField(unique=True)
   username = models.CharField(max_length=40, unique=True)
 

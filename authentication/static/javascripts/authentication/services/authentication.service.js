@@ -45,7 +45,7 @@
     * @memberOf sidewalkeggs.authentication.services.Authentication
     */
     function register(email, password, username) {
-      return $http.post('/unpolitical/api/v1/accounts/', {
+      return $http.post('/api/v1/accounts/', {
         username: username,
         password: password,
         email: email
@@ -77,7 +77,7 @@
      * @memberOf sidewalkeggs.authentication.services.Authentication
      */
     function login(email, password) {
-      return $http.post('/unpolitical/api/v1/auth/login', {
+      return $http.post('/api/v1/auth/login', {
         email: email, password: password
       }).then(loginSuccessFn, loginErrorFn);
 
@@ -88,16 +88,16 @@
       function loginSuccessFn(data, status, headers, config) {
         Authentication.setAuthenticatedAccount(data.data);
 
-        window.location = '/unpolitical';
+        window.location = '/';
       }
 
-        /**
-         * @name loginErrorFn
-         * @desc Log "Login Failure!" to the console
-         */
-        function loginErrorFn(data, status, headers, config) {
-          console.error('Login Failure')
-        }
+      /**
+       * @name loginErrorFn
+       * @desc Log "Login Failure!" to the console
+       */
+      function loginErrorFn(data, status, headers, config) {
+        console.error('Login Failure')
+      }
 
     }
 
@@ -153,7 +153,7 @@
      * @memberOf sidewalkeggs.authentication.services.Authentication
      */
     function logout() {
-      return $http.post('/unpolitical/api/v1/auth/logout')
+      return $http.post('/api/v1/auth/logout')
         .then(logoutSuccessFn, logoutErrorFn);
 
       /**
@@ -163,7 +163,7 @@
       function logoutSuccessFn(data, status, headers, config) {
         Authentication.unauthenticate();
 
-        window.location = '/unpolitical';
+        window.location = '/';
       }
 
       /**

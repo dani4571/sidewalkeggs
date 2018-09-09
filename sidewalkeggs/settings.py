@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'compressor',
-    'authentication'
+    'authentication',
+    'posts'
 ]
 
 MIDDLEWARE = [
@@ -129,10 +130,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/opt/sidewalkeggs/static'
+STATIC_ROOT = '/opt/sidewalkeggs/staticfiles'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'staticdir'),
+    os.path.join(BASE_DIR, 'static'),
 )
 
 STATICFILES_FINDERS = (
