@@ -1,0 +1,69 @@
+Grafana
+What it is - Grafana is an open source metric analytics & visualization suite. It is most commonly used for visualizing time series data for infrastructure and application analytics but many use it in other domains including industrial sensors, home automation, weather, and process control
+Use Cases - 
+
+Apache NiFi
+What it is - NiFi is an enterprise integration and dataflow automation tool that allows a user to send, receive, route, transform, and sort data, as needed, in an automated and configurable way
+Use Cases - 
+
+Apache Kafka
+What it is - a publish-subscribe-based durable messaging system that is exchanging data between processes, applications, and servers. also, event streaming platform capable of handling trillions of events a day. Initially conceived as a messaging queue, Kafka is based on an abstraction of a distributed commit log. Since being created and open sourced by LinkedIn in 2011, Kafka has quickly evolved from messaging queue to a full-fledged event streaming platform
+Use cases - 
+
+ElasticSearch
+What it is - NoSQL database that uses the Lucene StandardAnalyzer for indexing for automatic type guessing and for high precision
+Use Cases - 
+
+Logstash
+What it is - Logstash is an open source tool for collecting, parsing, and storing logs for future use.
+Use Cases - 
+
+Fluentd
+What it is - Fluentd is an open source data collector, which lets you unify the data collection and consumption for a better use and understanding of data. Unified loggin glayer
+Use cases - 
+
+Kibana
+What it is - DescriptionKibana is an open source data visualization plugin for Elasticsearch
+Use cases - 
+
+Redis
+What it is - 
+Use cases - 
+
+
+MongoDB
+
+Cassandra
+
+Hadoop
+
+
+
+
+CES
+Cucumber
+Sonarqube
+Fortify
+Anchored
+SD Element
+Twistlock
+Profana
+
+
+K8S
+Cri-o
+
+
+
+SERVICEMESH
+Istio
+
+
+
+SERVERLESS
+Nuclio
+OpenWhisk
+Fission
+Iron.IO
+
+MSSP Model
