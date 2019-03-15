@@ -1,6 +1,7 @@
 Apache NiFi
 What it is - NiFi is an enterprise integration and dataflow automation tool that allows a user to send, receive, route, transform, and sort data, as needed, in an automated and configurable way
-Use Cases - 
+Use Cases - ETL between diff big data platforms
+			Data shaping, just point A to B of data
 
 Apache Kafka
 What it is - a publish-subscribe-based durable messaging system that is exchanging data between processes, applications, and servers. also, event streaming platform capable of handling trillions of events a day. Initially conceived as a messaging queue, Kafka is based on an abstraction of a distributed commit log. Since being created and open sourced by LinkedIn in 2011, Kafka has quickly evolved from messaging queue to a full-fledged event streaming platform
