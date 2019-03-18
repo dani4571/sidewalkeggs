@@ -1,89 +1,129 @@
-Apache NiFi
-What it is - NiFi is an enterprise integration and dataflow automation tool that allows a user to send, receive, route, transform, and sort data, as needed, in an automated and configurable way
-Use Cases - ETL between diff big data platforms
-			Data shaping, just point A to B of data
+LIBS/LANGS
+ReactJS
 
-Apache Kafka
-What it is - a publish-subscribe-based durable messaging system that is exchanging data between processes, applications, and servers. also, event streaming platform capable of handling trillions of events a day. Initially conceived as a messaging queue, Kafka is based on an abstraction of a distributed commit log. Since being created and open sourced by LinkedIn in 2011, Kafka has quickly evolved from messaging queue to a full-fledged event streaming platform
+Mobile Things
+Cordova?
+
+==========================================================================================
+Prometheus
+What it is - Prometheus collects metrics from monitored targets by scraping metrics HTTP endpoints on these targets. Since Prometheus also exposes data in the same manner about itself, it can also scrape and monitor its own health
 Use cases - 
 
-Apache Spark
-What it is - distributed general-purpose cluster-computing framework
+Helm
+What it is - Helm is a tool for managing Kubernetes charts. Charts are packages of pre-configured Kubernetes resources. Helm is a tool that streamlines installing and managing Kubernetes applications. Think of it like apt/yum/homebrew for Kubernetes.
 Use cases - 
 
+==========================================================================================
+UI/Data Viz
 Grafana
 What it is - Grafana is an open source metric analytics & visualization suite. It is most commonly used for visualizing time series data for infrastructure and application analytics but many use it in other domains including industrial sensors, home automation, weather, and process control
-Use Cases - 
+Use Cases - Monitoring, metric visualization, 
 
 Graphite
-What it is - DescriptionGraphite is a free open-source software tool that monitors and graphs numeric time-series data such as the performance of computer systems. 
-Use Cases - 
-
-InfluxDB
-What it is -  InfluxDB is easy to use, scalable and highly available. A time series database is used to store log, sensor and other data, over a period of time. Log events across applications
-Use cases - 
-
-Logstash
-What it is - Logstash is an open source tool for collecting, parsing, and storing logs for future use.
-Use Cases - 
-
-Fluentd
-What it is - Fluentd is an open source data collector, which lets you unify the data collection and consumption for a better use and understanding of data. Unified loggin glayer
-Use cases - 
+What it is - Graphite is a free open-source software tool that monitors and graphs numeric time-series data such as the performance of computer systems. 
+Use Cases - track/monitor application metrics. view business metrics, host level metrics etc.
 
 Kibana
 What it is - DescriptionKibana is an open source data visualization plugin for Elasticsearch
-Use cases - 
+Use cases - Visualize data stored in elasticsearch. mosty log analysis
 
-ElasticSearch
-What it is - NoSQL database that uses the Lucene StandardAnalyzer for indexing for automatic type guessing and for high precision
-Use Cases - 
+==========================================================================================
+ETL/Messaging
+Apache Kafka
+What it is - a publish-subscribe-based durable messaging system that is exchanging data between processes, applications, and servers. also, event streaming platform capable of handling trillions of events a day. Initially conceived as a messaging queue, Kafka is based on an abstraction of a distributed commit log. Since being created and open sourced by LinkedIn in 2011, Kafka has quickly evolved from messaging queue to a full-fledged event streaming platform
+Use cases - Website Activity Tracking, Messaging, log aggregation, stream processing
 
+Apache NiFi
+What it is - NiFi is an enterprise integration and dataflow automation tool that allows a user to send, receive, route, transform, and sort data, as needed, in an automated and configurable way
+Use Cases - ETL between diff big data platforms. Data shaping, just point A to B of data
+
+
+==========================================================================================
+Apache Spark
+What it is - distributed general-purpose cluster-computing framework
+Use cases - Streaming ETL, Data enrichment, Trigger event detection, Machine Learning Library, predictive intelligence, customer segmentation for marketing purposes, and sentiment analysis
+
+==========================================================================================
+Logging
+Logstash
+What it is - Logstash is an open source tool for collecting, parsing, and storing logs for future use.
+Use Cases - Pushing logs into a data sink. casual stuff
+
+Fluentd
+What it is - Fluentd is an open source data collector, which lets you unify the data collection and consumption for a better use and understanding of data. Unified loggin glayer
+Use cases - Data Search like Splunk, Data Filtering and Alerting, Data Analytics with Treasure Data, Data Collection to MongoDB, Data Collection to HDFS, Data Archiving to Amazon S3
+
+==========================================================================================
+In-Memory Data
 Memcache
 What it is - open-source distributed memory caching system. It is often used to speed up dynamic database-driven websites by caching data and objects in RAM to reduce the number of times an external data source must be read.
-Use Cases - 
+Use Cases - cache sql stuff, parallel data grabs, session data?
 
 Redis
 What it is - Redis is an open source in-memory data structure project implementing a distributed, in-memory key-value database with optional durability. Redis supports different kinds of abstract data structures, such as strings, lists, maps, sets, sorted sets, hyperloglogs, bitmaps, streams and spatial indexes
-Use cases - 
+Use cases - session cache, full page cache, queues, leaderboards/counting, pub/sub
 
-MongoDB
-What it is - MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schemata
-Use cases - 
+==========================================================================================
+Time-Series DB
+InfluxDB
+What it is -  InfluxDB is easy to use, scalable and highly available. A time series database is used to store log, sensor and other data, over a period of time. Log events across applications
+Use cases - IoT edge data collection
 
-Cassandra
-What it is - open-source, distributed, wide column store, NoSQL database management system designed to handle large amounts of data across many commodity servers, providing high availability with no single point of failure
-Use cases - 
+==========================================================================================
+Relational DB
+Galera
+What it is - multi-master DB cluster. synchronous replication
+Use cases - mysql or mariadb clustering. HA and all that
 
 MariaDB
 What it is - community-developed, commercially supported fork of the MySQL relational database management system, intended to remain free and open-source software under the GNU GPL. Development is led by some of the original developers of MySQL, who forked it due to concerns over its acquisition by Oracle Corporation
+Use cases - Same as MySQL. Transactional DB
+
+PostgreSQL
+What it is - open source object-relational database management system with an emphasis on extensibility and standards compliance. It can handle workloads ranging from small single-machine applications to large Internet-facing applications with many concurrent user
+Use cases - ACID compliant so good for OLTP (online transaction processing). PostGIS (GeoServer). manufacturing due to HA, reliabile long term storage etc.
+
+==========================================================================================
+MapReduce
+CouchDB
+What it is - open-source database software that focuses on ease of use and having a scalable architecture. document-oriented NoSQL database architecture, it uses JSON to store data, JavaScript as its query language using MapReduce, and HTTP for an API.
 Use cases - 
 
 Hadoop
 What it is - collection of open-source software utilities that facilitate using a network of many computers to solve problems involving massive amounts of data and computation. It provides a software framework for distributed storage and processing of big data using the MapReduce programming model
-Use cases - 
+Use cases - batch aggregation? mongodb for basic stuff hadoop for complex analytics. 
 
-PostgreSQL
-What it is - open source object-relational database management system with an emphasis on extensibility and standards compliance. It can handle workloads ranging from small single-machine applications to large Internet-facing applications with many concurrent user
-Use cases - 
+==========================================================================================
+NoSQL
+Cassandra
+What it is - open-source, distributed, wide column store, NoSQL database management system designed to handle large amounts of data across many commodity servers, providing high availability with no single point of failure
+Use cases - writes exceed read by large margin, data rarely updated, read access is by known primary keys, no need for joins. transaction logging, time series data, health tracker data, weather svc history, IoT status/events, 
 
-==============================
-CES
+ElasticSearch
+What it is - NoSQL database that uses the Lucene StandardAnalyzer for indexing for automatic type guessing and for high precision
+Use Cases - log analysis, scraping/combining public data, text search, event data
+
+MongoDB
+What it is - MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schemata
+Use cases - log data/hierarchical aggregation, product catalog/inventory management/category hierarchy, metadata and asset manage/store comments
+
+==========================================================================================
+CES/Security/Testing
 Cucumber
-What it is - DescriptionCucumber is a software tool used by computer programmers for testing other software. It runs automated acceptance tests written in a behavior-driven development style. Central to the Cucumber BDD approach is its plain language parser called Gherkin
-Use cases - 
+What it is - Cucumber is a software tool used by computer programmers for testing other software. It runs automated acceptance tests written in a behavior-driven development style. Central to the Cucumber BDD approach is its plain language parser called Gherkin
+Use cases - make scenarios that act as documentation and test cases. implement test cases. run em. all of that
 
 Sonarqube
-What it is - DescriptionSonarQube is an open-source platform developed by SonarSource for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities on 20+ programming languages
-Use cases - 
+What it is - SonarQube is an open-source platform developed by SonarSource for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities on 20+ programming languages
+Use cases - make sure code is up to standard. no duplication, test coverage, api docs, common vulnerabilities etc.
 
 Fortify SCA
 What it is -Tool attempts to protect systems from security flaws in business-critical software applications. Fortify SCA drives down cost and risk by automating and enhancing key software audit, development, testing and deployment processes. Unlike traditional network security, Fortify SCA strengthens the software applications themselves so that hackers and malicious insiders cannot access vital assets or disrupt business processes. 
-Use cases - 
+Use cases - make sure code up to standards
 
 Anchore
 What it is - Anchore performs an in depth analysis of your container image allowing you to generate a detailed manifest and create and apply specific policy gates and checks for your entire container workload on premises and in the cloud
-Use cases - 
+Use cases - add to ci/cd pipeline to harden containers and catch common issues
 
 SD Element
 What it is - platform that translates policies to prescriptive, measurable procedures, used by IT and Engineering teams in enterprises to achieve their security and compliance objectives. SD Elements generates and tracks granular controls with a flexible, rule-based engine and integrates those controls into the ALMs of DevOps and Agile development teams across the entire Software Development Lifecycle (SDLC)
@@ -91,35 +131,35 @@ Use cases -
 
 Twistlock
 What it is - full-stack, full-lifecycle container and cloud native cybersecurity for teams using Docker, Kubernetes, serverless, and other cloud native technologies. Twistlock integrates with any CI tool and registry, and runs wherever you choose to run your VMs, containers, and cloud native applications. Vulnerability and compliance scanning and enforcement for your container images, hosts, and serverless functions.
-Use cases - 
+Use cases - identify container risk images. threats/firewall can't handle shifting traffic patterns well
 
 Profana
 What it is - ?
 Use cases - 
 
-==============================
+==========================================================================================
 K8S
 Cri-o
 What it is - implementation of the Kubernetes CRI (Container Runtime Interface) to enable using OCI (Open Container Initiative) compatible runtimes. It is a lightweight alternative to using Docker as the runtime for kubernetes. It allows Kubernetes to use any OCI-compliant runtime as the container runtime for running pods. Today it supports runc and Clear Containers as the container runtimes but any OCI-conformant runtime can be plugged in principle
-Use cases - 
+Use cases - same as docker. container runtime
 
-==============================
+==========================================================================================
 SERVICEMESH: network of microservices that make up such applications and the interactions between them. As a service mesh grows in size and complexity, it can become harder to understand and manage. Its requirements can include discovery, load balancing, failure recovery, metrics, and monitoring. A service mesh also often has more complex operational requirements, like A/B testing, canary releases, rate limiting, access control, and end-to-end authentication
 
 Istio
 What it is - open source service mesh that layers transparently onto existing distributed applications. It is also a platform, including APIs that let it integrate into any logging platform, or telemetry or policy system. Istio’s diverse feature set lets you successfully, and efficiently, run a distributed microservice architecture, and provides a uniform way to secure, connect, and monitor microservices.
 Istio provides behavioral insights and operational control over the service mesh as a whole, offering a complete solution to satisfy the diverse requirements of microservice applications
-Use cases - 
+Use cases - service discovery, operation reliability, traffic governance, svc-to-svc communication [TLS, JWS], trust-based access, chaos engineering (all in microservice environments)
 
-==============================
+==========================================================================================
 SERVERLESS
 Nuclio
 What it is - open source and managed serverless platform which allows developers to build and run auto-scaling applications without worrying about managing servers
-Use cases - 
+Use cases - process data/event streams w/ other data and use AI etc. for real-time insights, get notifications from data and ETL it, rapid dev of mobile/web backends or API's etc., serverless functions for IoT etc. for telemetry etc. 
 
 Apache OpenWhisk (Incubating)
 What it is - open source, distributed Serverless platform that executes functions (fx) in response to events at any scale. OpenWhisk manages the infrastructure, servers and scaling using Docker containers so you can focus on building amazing and efficient applications.
-Use cases - 
+Use cases - Mobile Backend Development, Data Processing, Cognitive Processing, Streaming Analytics, Internet of Things
 
 Fission
 What it is - open source framework that allows you to orchestrate a set of serverless functions without directly dealing with networking, message queues, etc.
@@ -145,3 +185,9 @@ Use cases -
 MSSP Model
 What it is - In computing, managed security services (MSS) are network security services that have been outsourced to a service provider
 Use cases - 
+
+
+
+
+LINKS
+https://medium.com/capital-one-tech/multi-stage-builds-and-dockerfile-b5866d9e2f84
