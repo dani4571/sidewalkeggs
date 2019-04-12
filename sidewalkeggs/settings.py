@@ -83,12 +83,18 @@ WSGI_APPLICATION = 'sidewalkeggs.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'sidewalkeggs2',
-        'USER': 'root',
-        'PASSWORD': 'XXXX',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        #**start of sqlite3 settings**
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': '/opt/mydatabase',
+        #**end of sqlite3 settinsg**
+        #**start of mysql settings**
+        #'ENGINE': 'django.db.backends.mysql', 
+        #'NAME': 'sidewalkeggs2',
+        #'USER': 'root',
+        #'PASSWORD': 'XXXX',
+        #'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        #'PORT': '3306',
+        #**end of mysql settings**
     }
 }
 
