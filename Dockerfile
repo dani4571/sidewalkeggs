@@ -2,12 +2,18 @@
 
 FROM python:3.7-alpine as py_builder
 WORKDIR /opt/sidewalkeggs
-COPY . .
+COPY requirements.txt bower.json ./
+RUN whoami
 RUN apk --update add npm mariadb-dev alpine-sdk  jpeg-dev \
 	&& pip install --upgrade pip \
-	&& pip install -r requirements2.txt \
+	&& pip install -r requirements.txt \
 	&& npm install -g bower \
-	&& npm isntall \
-	&& bower install \
+	&& npm install \
+	&& bower install --allow-root \	
 	&& apk del alpine-sdk 
 
+
+
+FROM py_builder as code_copy
+WORKDIR /opt/sidewalkeggs
+COPY . .

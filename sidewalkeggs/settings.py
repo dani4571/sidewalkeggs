@@ -11,6 +11,14 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import environ
+
+# Set up environ vars
+env = environ.Env(
+        ALLOWED_HOSTS=(list, ['127.0.0.1']),
+)
+
+environ.Env.read_env('./.env')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,7 +34,7 @@ SECRET_KEY = 'hz*y$vg!l0h)j&e3)h4vycg=%rs0w#47o$b#aqe#&wsw1)sz7m'
 DEBUG = os.environ.get('DEBUG', True)
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['23.253.234.200', '2001:4800:7817:103:be76:4eff:fe04:35d3']
+ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
 
 # Application definition
