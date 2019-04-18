@@ -12,8 +12,10 @@ RUN apk --update add npm mariadb-dev alpine-sdk  jpeg-dev \
 	&& bower install --allow-root \	
 	&& apk del alpine-sdk 
 
+FROM py_builder as dev_build
+WORKDIR /opt/sidewalkeggs
+VOLUME /opt/sidewalkeggs
 
-
-FROM py_builder as code_copy
+FROM py_builder as prod_build
 WORKDIR /opt/sidewalkeggs
 COPY . .
