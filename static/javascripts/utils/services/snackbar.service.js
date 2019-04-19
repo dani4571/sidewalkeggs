@@ -32,7 +32,7 @@
 		* @param {string} content The content of the snackbar
 		* @param {Object} options Options for displaying the snackbar
 		*/
-		function _snackbar(content, option) {
+		function _snackbar(content, options) {
 			options = _.extend({ timeout: 3000}, options);
 			options.content = content;
 
@@ -47,7 +47,7 @@
 	    * @memberOf thinkster.utils.services.Snackbar
 	    */
 	    function error(content, options) {
-	    	_snackbar('Error: ' + content, option);
+	    	_snackbar('Error: ' + content, options);
 	    }
 
 	    /**

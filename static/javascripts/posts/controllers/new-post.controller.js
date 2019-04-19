@@ -50,8 +50,8 @@
 			*/
 			function createPostErrorFn(data, status, headers, config) {
 				$rootScope.$broadcast('post.created.error');
-				Snackbar.error(data.error);
+				Snackbar.error(data + " " + status);
 			}
 	    }
 	}
-})
+})();

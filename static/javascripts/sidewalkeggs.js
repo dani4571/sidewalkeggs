@@ -8,6 +8,7 @@
 	  	'sidewalkeggs.authentication',
 	  	'sidewalkeggs.layout',
 	  	'sidewalkeggs.posts',
+	  	'sidewalkeggs.profiles',
 	  	'sidewalkeggs.utils'
 	  ]);
 
